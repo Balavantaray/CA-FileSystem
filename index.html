@@ -1,0 +1,481 @@
+<!DOCTYPE HTML>
+
+<html ng-app>
+
+<head>
+	<title>Complete Analytics R Integration</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+<style>
+	.bar {
+            fill: steelblue;
+		}
+		.divLeft {
+    width:100px;
+    display:block;
+	float: left;
+	margin-right: 105px;
+
+}
+.divRight {
+    width:100px;	
+    display:block;
+    float: right;
+}
+    </style>
+
+<body class="is-preload">
+
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="#intro">Home</a></li>
+					<li><a href="#one">R Integration</a></li>
+					<li><a href="#two">Processed Data</a></li>
+					<li><a href="#three">Contact Us</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Intro -->
+		<section id="intro" class="wrapper style1 fullscreen fade-up">
+			<div class="inner">
+				<h1>Complete Analytics</h1>
+				<p>CA Training Institute aims at providing world class training in the area of Research Analytics. <a href="http://www.completeanalytics.in">Complete
+						Analytics</a><br />
+					We train people to reason logically and think analytically to communicate the output efficiently,
+					thereby helping them to make smart choices of tools and techniques to solve problems in a structured manner. <a
+					 href="http://www.completeanalytics.in">Complete Analytics</a>.</p>
+				<ul class="actions">
+					<li><a href="#one" class="button scrolly">Learn more</a></li>
+				</ul>
+
+			</div>
+		</section>
+
+		<!-- One -->
+		<section id="one" class="wrapper style2 spotlights">
+			<section>
+				<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>R Integration</h2>
+						<p>Process the data and upload the CSV file</p>
+						<div>
+							<div class="panel-body" ng-controller="FileUploadController">
+								<form name="foo" method="post" enctype="multipart/form-data">
+									<input id="csvfile" type="file" value="i">
+								</form>
+								<div>
+									<button id="submitbutton" type="button">Proceess Now</button>
+									<!--<button id="submitbutton" type="button">Call R</button>-->
+								</div>
+								<div class="divLeft">
+									X-Axis<select id="xAxisList" class="form-control" style="width: 200px;">
+									</select>
+								</div>
+								<div class="divLeft">
+									Y-Axis<select id="yAxisList" class="form-control" style="width: 200px;">
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="margin-top: 10px;">
+						<button id="showgraphbutton" type="button">Show Graph</button>
+						<ul class="actions" style="margin-top: 10px;">
+							<li><a href="http://www.completeanalytics.in" class="button">Learn more</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</section>
+			<canvas id="myChart" style="width:100%;height:350px;"></canvas>
+		</section>
+
+		<!-- Two -->
+		<section id="two" class="wrapper style3 fade-up">
+			<div class="inner">
+				<h2>What we do</h2>
+				<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis.
+					Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+				<div class="features">
+					<section>
+						<span class="icon major fa-code"></span>
+						<h3>Lorem ipsum amet</h3>
+						<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat
+							dapibus.</p>
+					</section>
+					<section>
+						<span class="icon major fa-lock"></span>
+						<h3>Aliquam sed nullam</h3>
+						<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat
+							dapibus.</p>
+					</section>
+					<section>
+						<span class="icon major fa-cog"></span>
+						<h3>Sed erat ullam corper</h3>
+						<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat
+							dapibus.</p>
+					</section>
+					<section>
+						<span class="icon major fa-desktop"></span>
+						<h3>Veroeros quis lorem</h3>
+						<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat
+							dapibus.</p>
+					</section>
+					<section>
+						<span class="icon major fa-chain"></span>
+						<h3>Urna quis bibendum</h3>
+						<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat
+							dapibus.</p>
+					</section>
+					<section>
+						<span class="icon major fa-diamond"></span>
+						<h3>Aliquam urna dapibus</h3>
+						<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat
+							dapibus.</p>
+					</section>
+				</div>
+				<ul class="actions">
+					<li><a href="generic.html" class="button">Learn more</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Three -->
+		<section id="three" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h2>Contact</h2>
+				<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis.
+					Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+				<div class="split style1">
+					<section>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field half">
+									<label for="email">Email</label>
+									<input type="text" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="5"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><a href="" class="button submit">Send Message</a></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<ul class="contact">
+							<li>
+								<h3>Address</h3>
+								<span>Complete Analytics Training Institute<br />
+									48/2, 33rd mainroad,Ⅱ nd Cross, Dollars scheme, BTM Layout 1st stage,<br />
+									Bangalore- 560068.</span>
+							</li>
+							<li>
+								<h3>Email</h3>
+								<a href="#">user@untitled.tld</a>
+							</li>
+							<li>
+								<h3>Phone</h3>
+								<span>9886096090</span>
+							</li>
+							<li>
+								<h3>Social</h3>
+								<ul class="icons">
+									<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper style1-alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Untitled. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/common.js"></script>
+	<script src="assets/js/papaparse.min.js"></script>
+</body>
+
+</html>
+
+<script>
+
+	$(document).ready(function () {
+		var globalArrylist;
+		var globalScatterlist;
+		$('#showgraphbutton').click(function () {
+
+			if ($('#xAxisList').val() === '' || $('#yAxisList').val() === '') {
+				alert('Please select valid combination!');
+				return;
+			}
+
+			if ($('#xAxisList').val() === $('#yAxisList').val()) {
+				alert('The X-axis and Y-axis combination is invalid. Please choice different combination and try.');
+				return;
+			}
+
+			if ($('#xAxisList').val() === 'Clusters' || $('#yAxisList').val() === 'Clusters') {
+				//Bar Graph 
+				var xAxisValue = $('#xAxisList').val();
+				var yAxisValue = $('#yAxisList').val();
+				var selectedValue = xAxisValue;
+
+				if (yAxisValue !== 'Clusters') {
+					selectedValue = yAxisValue;
+				}
+
+				var selectedValueList = globalArrylist.filter(function (el) {
+					return el.Name === selectedValue;
+				});
+
+				result = selectedValueList.reduce(function (r, a) {
+					r[a.Cluster] = r[a.Cluster] || [];
+					r[a.Cluster].push(a);
+					return r;
+				}, Object.create(null));
+
+				var outputData = [];
+
+				$.each(result, function (k, rowData) {
+					var totalCount = 0;
+					var averageValue = 0;
+					var name = '';
+					var cluster = 0;
+					$.each(rowData, function (k1, groupedRowData) {
+						totalCount = totalCount + parseFloat(groupedRowData.Value);
+						averageValue = averageValue + 1;
+						name = groupedRowData.Name;
+						cluster = groupedRowData.Cluster;
+					});
+
+					var intermediateDataObject = {};
+					intermediateDataObject.Name = name;
+					intermediateDataObject.Value = totalCount / averageValue;
+					intermediateDataObject.Cluster = cluster;
+					outputData.push(intermediateDataObject);
+				});
+
+				var labels = '';
+
+				if (xAxisValue === 'Clusters') {
+
+					labels = outputData.map(function (e) {
+						return e.Cluster;
+					});
+				}
+				else {
+					labels = outputData.map(function (e) {
+						return e.Value;
+					});
+				}
+
+				var data = '';
+				if (xAxisValue === 'Clusters') {
+					data = outputData.map(function (e) {
+						return e.Value;
+					});
+				}
+				else {
+					data = outputData.map(function (e) {
+						return e.Cluster;
+					});
+				}
+
+				console.log(data);
+
+				var ctx = document.getElementById("myChart");
+				var myChart = new Chart(ctx, {
+					type: 'bar',
+					responsive: true,
+					data: {
+						labels: labels,
+						datasets: [{
+							label: 'Clusters',
+							data: data,
+							backgroundColor: [
+								'rgba(193, 66, 66)',
+								'rgba(191, 63, 178)',
+								'rgba(63, 155, 191)'
+							],
+							borderColor: [
+								'rgba(193, 66, 66)',
+								'rgba(191, 63, 178)',
+								'rgba(63, 155, 191)'
+							]
+						}]
+					},
+
+					options: {
+
+						scales: {
+							xAxes: [{
+								barThickness: 150,
+								ticks: {
+									fontColor: "#CCC",
+									beginAtZero: true
+								}
+							}],
+							yAxes: [{
+								barThickness: 150,
+								ticks: {
+									fontColor: "#CCC",
+									beginAtZero: true
+								}
+							}]
+						}
+					}
+				});
+			}
+			else {
+
+				//Scattered Graph
+				var xAxisValue = $('#xAxisList').val();
+				var yAxisValue = $('#yAxisList').val();
+				
+				var intermediateData = [];
+				$.each(globalScatterlist, function (k, rowColumn) {
+					
+									var intermediateDataObject = {};
+									intermediateDataObject.x =  rowColumn[xAxisValue];
+									intermediateDataObject.y =  rowColumn[yAxisValue];
+									intermediateData.push(intermediateDataObject);
+								
+							});
+
+				console.log(globalScatterlist);
+				var ctx = document.getElementById("myChart");
+				var myChart = new Chart(ctx, {
+					type: 'scatter',
+					data: {
+						datasets: [
+							{
+								label: xAxisValue,
+								data: intermediateData,							
+								fill: false,
+								showLine:false,
+								pointBackgroundColor: 'lightblue',
+         						pointRadius: 5
+							}
+						]
+					},
+					options: {
+						scales: {
+							xAxes: [{
+								barThickness: 150,
+								ticks: {
+									fontColor: "#CCC"
+								}
+							}],
+							yAxes: [{
+								barThickness: 150,
+								ticks: {
+									fontColor: "#CCC"
+								}
+							}]
+						}
+					}
+				});
+			}
+			/*$.each(outputData, function (k, rowData) {
+				console.log('Name : ' + rowData.Name);
+				console.log('Value : ' + rowData.Value);
+				console.log('Cluster : ' + rowData.Cluster);
+			});*/
+		});
+
+		$("#submitbutton").click(function () {
+
+			var myfile = $("#csvfile")[0].files[0];
+
+			if (myfile === undefined) {
+				alert('Please select CSV file!');
+				return;
+			}
+
+			var json = Papa.parse(myfile,
+				{
+					header: true,
+					skipEmptyLines: true,
+					complete: function (results) {
+						//console.log("Dataframe:", JSON.stringify(results.data));
+						//console.log("Column names:", results.meta.fields);
+						//console.log("Errors:", results.errors);
+						//console.log("Without", results.data);
+						globalScatterlist = results.data;
+						var intermediateData = [];
+
+						$.each(results.meta.fields, function (k, column) {
+							if (column !== 'clusters') {
+								$.each(results.data, function (k, rowColumn) {
+									var intermediateDataObject = {};
+									intermediateDataObject.Name = column;
+									intermediateDataObject.Value = rowColumn[column];
+									intermediateDataObject.Cluster = rowColumn["clusters"];
+									intermediateData.push(intermediateDataObject);
+								});
+							}
+						});
+						globalArrylist = intermediateData;
+						
+						var tmpValue = '';
+						$('#xAxisList').append($('<option>', { value: '' }).text('Please select'));
+						$('#yAxisList').append($('<option>', { value: '' }).text('Please select'));
+						$.each(intermediateData, function (k, rowData) {
+							if (tmpValue !== rowData.Name) {
+								$('#xAxisList').append($('<option>', { value: rowData.Name }).text(rowData.Name));
+								$('#yAxisList').append($('<option>', { value: rowData.Name }).text(rowData.Name));
+								tmpValue = rowData.Name;
+							}
+						});
+						$('#xAxisList').append($('<option>', { value: 'Clusters' }).text('Clusters'));
+						$('#yAxisList').append($('<option>', { value: 'Clusters' }).text('Clusters'));
+					}
+				});
+		})
+	});
+
+
+</script>
